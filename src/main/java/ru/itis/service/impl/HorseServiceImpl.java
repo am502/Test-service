@@ -36,6 +36,7 @@ public class HorseServiceImpl implements HorseService {
 
         int[][] board = new int[horseDto.getWidth()][horseDto.getHeight()];
         board[end.x][end.y] = 2;
+
         return horseRec(board, start, 0);
     }
 

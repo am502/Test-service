@@ -1,16 +1,19 @@
 package ru.itis.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import ru.itis.dto.HorseDto;
-import ru.itis.service.impl.HorseServiceImpl;
+import ru.itis.service.HorseService;
 
 @RestController
 @RequestMapping("/hourse/rest")
 public class HorseController {
 
     @Autowired
-    private HorseServiceImpl horseService;
+    private HorseService horseService;
 
     @RequestMapping(value = "/count", method = RequestMethod.GET)
     public int findShortestPath(@RequestParam("width") int width,
